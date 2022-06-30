@@ -9,7 +9,7 @@
 <meta name="author" content="http://webthemez.com" />
 <!-- css --> 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+<link rel="stylesheet" href="{% static  'materialize/css/materialize.min.css' %}" media="screen,projection" />
 <link href="{% static  'gymDirectory/css/bootstrap.min.css' %}" rel="stylesheet" />
 <link href="{% static  'gymDirectory/css/fancybox/jquery.fancybox.css' %}" rel="stylesheet"> 
 <link href="{% static  'gymDirectory/css/flexslider.css' %}" rel="stylesheet" /> 
@@ -47,10 +47,10 @@
                             <li><a class="waves-effect waves-dark" href="#">Investors</a></li>
                         </ul>
                     </li> 
-						<li><a class="waves-effect waves-dark" href="services.html">Services</a></li>
-                        <li><a class="waves-effect waves-dark" href="portfolio.html">Gallery</a></li>
-                        <li><a class="waves-effect waves-dark" href="pricing.html">Pricing</a></li>
-                        <li><a class="waves-effect waves-dark" href="contact.html">Contact</a></li>
+						<li><a class="waves-effect waves-dark" href="{% url 'services' %}">Services</a></li>
+						<li><a class="waves-effect waves-dark" href="{% url 'portfolio' %}">Gallery</a></li>
+						<li><a class="waves-effect waves-dark" href="{% url 'pricing' %}">Pricing</a></li>
+						<li><a class="waves-effect waves-dark" href="{% url 'contact' %}">Contact</a></li>
                     </ul>
                 </div>
             </div>
