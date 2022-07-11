@@ -59,18 +59,21 @@
 	</header>
 
         <div class="row">
-            <div class="col-sm-3">
-                <div class="card-image">
+            <div class="cta-text">
+                <element id="img-box">
                     <img class="img-responsive" src="{% static  'gymDirectory/img/service2.jpg' %}" alt="">  
-                    <span class="card-title">Login</span>
-                </div>
+                    <h3>Login</h3>
+                </element>
                 <div class="input-field">
                     <form action="{% url 'login_user' %}" method="POST" novalidate>
                         {% csrf_token %}
                         {{form.as_p}}
                 
                         <br>
-                        <input type="submit" value="Login" class="btn btn-block btn-primary">
+                        <div class="flex-parent jc-center">
+                            <a type="submit" class="btn btn-primary waves-effect waves-dark pull-right" href="{% url 'return' %}">Submit</a>
+                        </div>
+                        
                     </form>
                 </div>
             </div>

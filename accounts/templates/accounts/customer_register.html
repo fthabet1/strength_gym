@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Login</title>
+<title>Customer Register</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="" />
 <meta name="author" content="http://webthemez.com" />
@@ -59,10 +59,10 @@
 	</header>
 
     <div class="row">
-        <div class="col-sm-3">
-            <div class="card-image">
+        <div class="cta-text">
+            <div class="img-box">
                 <img class="img-responsive" src="{% static  'gymDirectory/img/service1.jpg' %}" alt="">  
-                <span class="card-title">Login</span>
+                <h3>Customer Registration</h3>
             </div>
             <div class="input-field">
                 <form action="{% url 'customer_register' %}" method="POST" novalidate>
@@ -70,7 +70,9 @@
                     {{form.as_p}}
             
                     <br>
-                    <input type="submit" value="Login" class="btn btn-block btn-primary">
+                    <div class="flex-parent jc-center">
+                        <a type="submit" class="btn btn-primary waves-effect waves-dark pull-right">Submit</a>
+                    </div>
                 </form>
             </div>
         </div>
