@@ -4,10 +4,17 @@ from django import forms
 from .models import Customer, Staff, User
 
 class CustomerSignUpForm(UserCreationForm):
+
+    member_tiers = (
+        ('B', 'Basic'),
+        ('I', 'Intermediate'),
+        ('A', 'Advanced')
+    )
+
     first_name = forms.CharField(required=True)
     last_name = forms.CharField(required=True)
     email_address = forms.EmailField(required=True)
-    membership_tier = forms.CharField(required=True)
+    membership_tier = forms.ChoiceField(choices = member_tiers, required=True)
 
     class Meta(UserCreationForm.Meta):
         model = User
@@ -26,9 +33,17 @@ class CustomerSignUpForm(UserCreationForm):
         return user
 
 class StaffSignUpForm(UserCreationForm):
+
+    employee_roles = (
+        ('F', 'Front Desk'),
+        ('C', 'Cleaner'),
+        ('P', 'Personal Trainer'),
+        ('M', 'Management')
+    )
+
     first_name = forms.CharField(required=True)
     last_name = forms.CharField(required=True)
-    role = forms.CharField(required=True)
+    role = forms.ChoiceField(choices = employee_roles, required=True)
     employeeID = forms.IntegerField(required=True)
 
     class Meta(UserCreationForm.Meta):

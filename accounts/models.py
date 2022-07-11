@@ -9,11 +9,25 @@ class User(AbstractUser):
     last_name = models.CharField(max_length = 30)
 
 class Customer(models.Model):
-    username = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+
+    member_tiers = (
+        ('B', 'Basic'),
+        ('I', 'Intermediate'),
+        ('A', 'Advanced')
+    )
+
+    username = models.CharField(User, max_length = 50, primary_key=True)
     email_address = models.EmailField(max_length=30)
-    membership_tier = models.CharField(max_length=30)
+    membership_tier = models.CharField(max_length = 1, choices = member_tiers)
 
 class Staff(models.Model):
-    username = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    role = models.CharField(max_length=30)
+
+    employee_roles = (
+        ('F', 'Front Desk'),
+        ('C', 'Cleaner'),
+        ('P', 'Personal Trainer'),
+        ('M', 'Management')
+    )
+    username = models.CharField(User, max_length = 50, primary_key=True)
+    role = models.CharField(max_length = 1, choices = employee_roles)
     employeeID = models.IntegerField()
