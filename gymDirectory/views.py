@@ -10,8 +10,8 @@ def about(request):
 def contact(request):
     return render(request, "gymDirectory/contact.html", {})
 
-def portfolio(request):
-    return render(request, "gymDirectory/portfolio.html", {})
+def gallery(request):
+    return render(request, "gymDirectory/gallery.html", {})
 
 def pricing(request):
     return render(request, "gymDirectory/pricing.html", {})
