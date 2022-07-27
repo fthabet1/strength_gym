@@ -9,10 +9,10 @@
 {% block body %}
 
     <div class="row">
-        <div class="col-sm-3">
-            <div class="card-image">
+        <div class="cta-text">
+            <div class="img-box">
                 <img class="img-responsive" src="{% static  'gymDirectory/img/service3.jpg' %}" alt="">  
-                <span class="card-title">Staff Registration</span>
+                <h3>Staff Registration</h3>
             </div>
             <div class="input-field">
                 <form action="{% url 'staff_register' %}" method="POST" novalidate>
@@ -20,10 +20,10 @@
                     {{form.as_p}}
             
                     <br>
-                    <input type="submit" value="Login" class="btn btn-block btn-primary">
+                    <input type="submit" value="Register" class="btn btn-primary">
                 </form>
             </div>
         </div>
     </div>
 
-	{% endblock %}
+{% endblock %}

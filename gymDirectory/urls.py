@@ -11,4 +11,5 @@ urlpatterns = [
     path("pricing", views.pricing, name="pricing"),
     path("services", views.services, name="services"),
     path("login", RedirectView.as_view(url='/accounts/login_user', permanent=True), name = "login"),
+    path("register", RedirectView.as_view(url='/accounts/', permanent=True), name = "register")
 ]

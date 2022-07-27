@@ -27,8 +27,7 @@
                 <h3>Hi {{user.get_username}}!</h3>
                 <a href="{% url 'logout_user' %}">Logout</a> <br>
                 {% else %}
-                <a href="{% url 'register' %}">Register</a> <br>
-                <a href="{% url 'login_user' %}">Login</a>
+                <h1><a href="{% url 'return' %}">Home</a></h1> <br>
                 {% endif %}
             </div>
         </div>
